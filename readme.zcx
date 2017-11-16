@@ -1,0 +1,25 @@
+Generate Mapping File between UniProt Accession, Gene Name, and b-number
+Currently, this package only works for E coli strain K12.
+
+
+Step 1: Download data from UniProt
+[1] Go to "Escherichia coli (strain K12)" reference proteome at
+    http://www.uniprot.org/proteomes/UP000000625
+    In the "Download" tab, choose "Text" as Format, click "Go" to download
+    a compressed file containing all UniProt annotations for E coli strain
+    K12 proteins. You do NOT need to uncompress the file.
+[2] Rename the downloaded file as "UP000000625.txt.gz".
+    Put the files at current folder.
+
+Step 2: Extract accession mapping
+[3] Run the script "generate_bnumber_mapping.py" by:
+   $ ./generate_bnumber_mapping.py UP000000625.txt.gz > UP000000625.tsv
+    The "UP000000625.tsv" file is a tab-eliminated plain text file. Each
+    line is one UniProt protein with four fields:
+    (A) UniProt Accession
+    (B) Gene Name
+    (C) B Number
+    (D) Protein Sequence
+    If one UniProt protein has multiple accession numbers (or multiple
+    gene names), they will be seperate by commas, and the first one is
+    the primary accession.
