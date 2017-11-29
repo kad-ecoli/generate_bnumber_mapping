@@ -1,4 +1,4 @@
-Generate Mapping File between UniProt Accession, Gene Name, and b-number
+Generate Mapping File between UniProt Accession, Gene Name, and b number
 Currently, this package only works for E coli strain K12.
 
 
@@ -22,4 +22,6 @@ Step 2: Extract accession mapping
     (D) Protein Sequence
     If one UniProt protein has multiple accession numbers (or multiple
     gene names), they will be seperate by commas, and the first one is
-    the primary accession.
+    the primary accession. If one gene has b number listed by both 
+    "OrderedLocusName" and "ORFNames", these b numbers are seperated by
+    commans, and "OrderedLocusName" will be placed before "ORFNames",

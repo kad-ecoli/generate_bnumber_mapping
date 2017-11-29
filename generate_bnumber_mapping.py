@@ -24,6 +24,7 @@ name_pat=re.compile("Name=(\S+)")
 synonyms_pat=re.compile("Synonyms=([\s\S]+?);")
 syn_name_pat=re.compile("(\S+)")
 locus_pat=re.compile("OrderedLocusNames=([\s\S]+?);")
+orf_pat=re.compile("ORFNames=([\s\S]+?);")
 bnumber_pat=re.compile("^b\d+$")
 
 txt=''
@@ -42,6 +43,11 @@ for block in stdout.split("//\n"):
     for m in locus_pat.findall(GN):
         for name in m.split(", "):
             bnumber_list+=[b for b in name.split() if bnumber_pat.match(b)]
+    for m in orf_pat.findall(GN):
+        for name in m.split(", "):
+            for sub_name in name.split():
+                bnumber_list+=[b for b in sub_name.split('/'
+                    ) if bnumber_pat.match(b)]
 
     sequence=''.join(block.split("SQ   ")[1].splitlines()[1:]).replace(' ','')
 
