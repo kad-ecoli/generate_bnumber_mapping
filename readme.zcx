@@ -25,3 +25,10 @@ Step 2: Extract accession mapping
     the primary accession. If one gene has b number listed by both 
     "OrderedLocusName" and "ORFNames", these b numbers are seperated by
     commans, and "OrderedLocusName" will be placed before "ORFNames",
+
+Update 04/04/2018:
+UniProt now provides E coli protein accession mapping at
+    https://www.uniprot.org/docs/ecoli.txt
+UniProt only curates protein coding genes, which renders the above two 
+sources less useful if you are interested in non-protein-coding genes,
+e.g. those coding for RNA.
