@@ -33,4 +33,6 @@ UniProt only curates protein coding genes, which renders the above two
 sources less useful if you are interested in non-protein-coding genes,
 e.g. those coding for RNA. Alternatively, you can use
     http://www.ecogene.org/ecodownload/crossref
-which is not limtied to protein coding genes.
+which is not limtied to protein coding genes. Similarly, EcoCyc also
+provides mapping at
+    https://ecocyc.org/gene-links.shtml
